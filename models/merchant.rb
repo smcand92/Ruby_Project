@@ -8,7 +8,6 @@ class Merchant
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @tag = options['type']
   end
 
   def save()
@@ -16,7 +15,7 @@ class Merchant
     (name, type)
     VALUES ($1)
     RETURNING id"
-    values = [@name, @tag]
+    values = [@name]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
