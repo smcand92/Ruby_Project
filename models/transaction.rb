@@ -13,19 +13,19 @@ class Transaction
 
   def save()
     sql = "INSERT INTO transactions
-    (mechant_id, tag_id, amount)
+    (merchant_id, tag_id, amount)
     VALUES
     ($1, $2, $3)
     RETURNING id"
     values = [@merchant_id, @tag_id, @amount]
     results = SqlRunner.run(sql, values)
-    @id = results.first(['id'].to_i)
+    @id = results.first()['id'].to_i
   end
 
   def self.all()
     sql = "SELECT * FROM transactions"
     results = SqlRunner.run(sql)
-    return results.map{|transcation| Transaction.new(transaction)}
+    return results.map{|transaction| Transaction.new(transaction)}
   end
 
   def self.delete_all()
@@ -39,4 +39,4 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
-end 
+end

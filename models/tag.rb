@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class tag
+class Tag
 
 attr_reader :type, :id
 
