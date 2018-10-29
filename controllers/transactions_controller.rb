@@ -7,7 +7,7 @@ require_relative('../models/transaction.rb')
 also_reload('../models/*')
 
 get '/transactions' do
-  @transaction = Transaction.all()
+  @transactions = Transaction.all()
   erb ( :"transactions/index" )
 end
 
