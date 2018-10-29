@@ -1,6 +1,7 @@
+DROP TABLE transactions;
 DROP TABLE tags;
 DROP TABLE merchants;
-DROP TABLE transactions;
+
 
 CREATE TABLE merchants(
   id SERIAL4 primary key,
