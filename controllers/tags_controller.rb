@@ -10,7 +10,7 @@ get '/tags' do
 end
 
 get '/tags/show/:id' do
-  @tags = Tag.find(params['id'].to-i)
+  @tags = Tag.find(params['id'].to_i)
   erb(:"tags/show")
 end
 

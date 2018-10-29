@@ -59,5 +59,8 @@ tag3 = Tag.new({
         })
         transaction3.save()
 
+tag2.type = "Electric"
+tag2.update()
+
         binding.pry
         nil

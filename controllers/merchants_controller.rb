@@ -24,6 +24,17 @@ post '/merchants' do
   redirect to('/merchants')
 end
 
+get '/merchants/edit/:id' do
+  id = params['id']
+  @merchant = Merchant.find(id)
+  erb(:"merchants/edit")
+end
+
+post '/merchants/:id' do
+ Merchant.new(params).update()
+ redirect to "/merchants"
+end
+
 post "/merchants/:id/delete" do
   merchant = Merchant.find(params[:id])
   merchant.delete()
