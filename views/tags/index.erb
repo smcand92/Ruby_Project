@@ -1,2 +1,18 @@
 <h1>Tags</h1>
 <p><a href="/tags/new">Add New Tag</a></p>
+
+<table>
+  <tr>
+    <th>Type</th>
+  </tr>
+  <% for tag in @tags %>
+  <tr>
+    <td><p><%= tag.type() %></p></td>
+  </tr>
+  <tr>
+    <td><p><a href="/tags/edit/<%= tag.id %>">Edit tag</a></p></td>
+    <td><p><form method="post" action="/tags/<%= tag.id%>/delete">
+          <input type="submit" value="Delete Tag"/></p></td>
+        </tr>
+<% end %>
+</table>

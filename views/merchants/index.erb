@@ -1,3 +1,17 @@
 
 <h1>Merchants</h1>
 <p><a href="/merchants/new">Add New Merchant</a></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for merchant in @merchants %>
+  <tr>
+    <td><p><%= merchant.name()%></p></td>
+  </tr>
+  <tr>
+    <td><p><form method="post" action="/merchants/<%= merchant.id%>/delete">
+    <input type="submit" value="Delete Merchant"/></p></td>
+<% end %>
+</table>

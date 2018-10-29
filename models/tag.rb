@@ -18,6 +18,12 @@ def save()
   @id = results.first()['id'].to_i
 end
 
+def update()
+  sql = "UPDATE tags SET (type)=($1) WHERE id = $2"
+  values = [@type]
+  SqlRunner.run(sql, values)
+end
+
 def self.all()
   sql = "SELECT * FROM tags"
   results = SqlRunner.run(sql)
@@ -36,5 +42,12 @@ def self.delete_all
   sql = "DELETE FROM tags"
   SqlRunner.run(sql)
 end
+
+def delete()
+  sql = "DELETE FROM tags WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
+
 
 end

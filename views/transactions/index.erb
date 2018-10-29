@@ -1,3 +1,5 @@
 
 <h1>Transactions</h1>
 <p><a href="/transactions/new">Add New Transaction</a></p>
+<form method="post" action="/transactions/<%= transaction.id%>/delete">
+      <input type="submit" value="Delete Transaction"/>
