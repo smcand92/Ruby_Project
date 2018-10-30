@@ -14,3 +14,13 @@ ul {
   margin: 0px;
   list-style-type: none;
 }
+
+body {
+  background: dimgray  url('/images/background_image.jpg');
+  background-size: 200%;
+  background-repeat: no-repeat;
+  color: lightcoral;
+  font-family: 'Arial', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}

@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-
+require('pry-byebug')
 class Transaction
 
   attr_accessor :id, :merchant_id, :amount, :tag_id
@@ -55,6 +55,11 @@ end
   return result[0]
 end
 
+def self.total()
+  sql = "SELECT SUM(amount) FROM transactions"
+  total = SqlRunner.run(sql)
+  return total[0]['sum'].to_i
+end
 
 
 

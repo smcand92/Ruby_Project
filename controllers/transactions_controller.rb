@@ -8,6 +8,7 @@ also_reload('../models/*')
 
 get '/transactions' do
   @transactions = Transaction.all()
+  @total = Transaction.total()
   erb ( :"transactions/index" )
 end
 
@@ -17,9 +18,8 @@ get '/transactions/new' do
   erb (:"transactions/new")
 end
 
-# post '/transactions' do
-#
-#   @transaction = Transaction.new(params)
-#   @transaction.save()
-#   redirect to ('/transactions')
-# end
+post '/transactions' do
+  @transaction = Transaction.new(params)
+  @transaction.save()
+  redirect to ('/transactions')
+end
