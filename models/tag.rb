@@ -38,6 +38,13 @@ def self.find(id)
   return Tag.new(results.first)
 end
 
+def self.find_type(type)
+  sql = "SELECT * FROM tags WHERE type = $1"
+  values = [type]
+  results = SqlRunner.run(sql, values)
+  return Tag.new(results.first)
+end
+
 def self.delete_all
   sql = "DELETE FROM tags"
   SqlRunner.run(sql)

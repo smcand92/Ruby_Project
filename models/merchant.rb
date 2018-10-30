@@ -38,6 +38,13 @@ def self.find(id)
   return Merchant.new(results.first)
 end
 
+def self.find_name(name)
+  sql = "SELECT * FROM merchants WHERE name = $1"
+  values = [name]
+  results = SqlRunner.run(sql, values)
+  return Merchant.new(results.first)
+end
+
 def self.delete_all
   sql = "DELETE FROM merchants"
   SqlRunner.run(sql)
