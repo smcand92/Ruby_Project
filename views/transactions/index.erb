@@ -3,8 +3,8 @@
 <p><a href="/transactions/new">Add New Transaction</a></p>
 
 <% for transaction in @transactions%>
-<p>Transaction ID: <%= transaction.id() %> </p>
-<p>Merchant: <%= transaction.merchant.name() %> </p>
-<p>Tag: <%= transaction.tag.type() %> </p>
-<p>Amount: <%= transaction.amount() %> </p>
+<p>Transaction ID: <%= transaction.id %> </p>
+<p>Merchant: <%= transaction.merchant.name %> </p>
+<p>Tag: <%= transaction.tag.type %> </p>
+<p>Amount: <%= transaction.amount %> </p>
 <%end%>
