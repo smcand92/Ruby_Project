@@ -10,13 +10,14 @@
   </tr>
 <% for transaction in @transactions%>
 <tr>
-  <td> <%= transaction.id %> </td>
+<td> <%= transaction.id %> </td>
 <td> <%= transaction.merchant.name %> </td>
 <td> <%= transaction.tag.type %> </td>
 <td> <%= transaction.amount %> </td>
 <td><a href="/transactions/edit/<%= transaction.id %>">Edit Transaction</a></td>
 <td><form method="post" action="/transactions/<%= transaction.id%>/delete">
-  <input type="submit" value="Delete Transaction"/</td>
+  <input name="id" type="submit" value="Delete"/></td>
+</form>
 <%end%>
 </tr>
 </table>
