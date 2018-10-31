@@ -1,26 +1,21 @@
-nav {
-  padding: 0px;
-  margin: 0px;
-  padding-right: 25px;
+.topnav {
+  font-size: 30px;
+    background-color: #326bcc;
+    overflow: hidden;
 }
-
-nav ul li {
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-ul {
-  padding: 0px;
-  margin: 0px;
-  list-style-type: none;
-}
-
 body {
-  background: dimgray  url('/images/background_image.jpg');
+  background: #5e5e5e url('/images/background_image.jpg');
   background-size: 200%;
   background-repeat: no-repeat;
-  color: lightcoral;
+  color: #326bcc;
   font-family: 'Arial', sans-serif;
   padding: 0px;
   margin: 0px;
 }
+ .welcome {
+   color:#4080d1;
+   font-size: 50px;
+ }
+ .topnav {
+
+ }

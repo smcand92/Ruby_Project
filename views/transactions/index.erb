@@ -1,13 +1,24 @@
 
 <h1>Transactions</h1>
 <p><a href="/transactions/new">Add New Transaction</a></p>
-
+<table>
+  <tr>
+    <th>Transaction ID:</th>
+    <th>Merchant:</th>
+    <th>Tag:</th>
+    <th>Amount:</th>
+  </tr>
 <% for transaction in @transactions%>
-<p>Transaction ID: <%= transaction.id %> </p>
-<p>Merchant: <%= transaction.merchant.name %> </p>
-<p>Tag: <%= transaction.tag.type %> </p>
-<p>Amount: <%= transaction.amount %> </p>
+<tr>
+  <td> <%= transaction.id %> </td>
+<td> <%= transaction.merchant.name %> </td>
+<td> <%= transaction.tag.type %> </td>
+<td> <%= transaction.amount %> </td>
+<td><a href="/transactions/edit/<%= transaction.id %>">Edit Transaction</a></td>
+<td><form method="post" action="/transactions/<%= transaction.id%>/delete">
+  <input type="submit" value="Delete Transaction"/</td>
 <%end%>
-
+</tr>
+</table>
 
 <p>Total: <%=@total %></p>

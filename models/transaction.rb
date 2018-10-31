@@ -28,14 +28,21 @@ class Transaction
     return results.map{|transaction| Transaction.new(transaction)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Transaction.new(results.first)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
   end
 
-  def self.delete(id)
+  def delete()
     sql = "DELETE FROM transactions WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
